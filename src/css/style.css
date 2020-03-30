@@ -6,22 +6,23 @@
  
 html {
   font-family: serif;
-}
-
-.page {
-  margin: 0 auto 0 auto;
-  max-width: 1200px;
+  overflow: auto;
 }
 
 body {
-    font-size: 1.4rem;
+    overflow: hidden;
+    font-size: 1.3rem;
     height: 100%;
     width: 100%;
-    display: grid;
     margin-top: 0;
     margin-left: 0;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60px 1fr;
+    margin-right: 0;
+}
+
+#header, #main, #footer {
+    margin: 0 auto 0 auto;
+    max-width: 1200px;
+    min-width: 960px;
 }
 
 /********
@@ -49,83 +50,141 @@ a:active {
 }
 
 
-
 /********
 * ヘッダ *
  ********/
 
+/**************
+* メニューバー *
+ **************/
 
 header {
-    /* position: relative; */
-    position: sticky;
-    top: 0;
-    left: 0;
-    height: 300px;
+    margin-top: 0;
+    background-color: black;
 }
 
-.header-image h1 {
-    position: absolute;
-    font-weight: bold; /*太字に*/
-    font-size: 5em;    /*サイズ5倍*/
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    margin:0;
-    padding:0;
-    /* text-align: center; */
+.cp_navi {
+	background-color: #ffffff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888888;
+	display: block;
+	margin: 1em 1%;
+	margin-top: 0;
+	overflow: hidden;
+	width: 97.5vw;
 }
 
-.header-image {
-  width: 100%;
+.cp_navi ul {
+	margin: 0;
+	padding: 0;
+}
+.cp_navi > ul > li {
+	display: inline-block;
+	list-style-type: none;
+	-webkit-transition: all 0.2s;
+	        transition: all 0.2s;
 }
 
-.nav {
-     text-align: right;
+.logo{
+    margin: 0 0 -19px 0;
 }
 
-/************
-* サイドバー *
- ************/
-
-.sidebar{
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    position: sticky;
-    overflow-y: auto;
-    height: calc(100vh - 60px);
-    box-sizing: border-box;
-    background: pink;
+.search {
+    margin-left: 20px;
+    margin-right: 40px;
 }
+
+.cp_navi > ul > li > a > .caret {
+	border-top: 4px solid #aaaaaa;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: '';
+	display: inline-block;
+	height: 0;
+	width: 0;
+	vertical-align: middle;
+	-webkit-transition: color 0.1s linear;
+	        transition: color 0.1s linear;
+}
+.cp_navi > ul > li > a {
+    width: 16vw;
+	color: #aaaaaa;
+	display: block;
+	line-height: 56px;
+	padding: 0 15px;
+	text-decoration: none;
+}
+.cp_navi > ul > li:hover {
+	background-color: rgb(255, 255, 15);
+}
+.cp_navi > ul > li:hover > a {
+	color: rgb( 255, 255, 255 );
+}
+.cp_navi > ul > li:hover > a > .caret {
+	border-top-color: rgb( 255, 255, 255 );
+}
+
+.cp_navi > ul > li > div {
+	background-color: rgb(255, 255, 15);
+	border-top: 0;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	display: none;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	width: 180px;
+	visibility: hidden;
+	-webkit-transiton: opacity 0.2s;
+	       transition: opacity 0.2s;
+}
+.cp_navi > ul > li:hover > div {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+}
+.cp_navi > ul > li > div ul > li {
+	display: block;
+	text-align: center;
+}
+.cp_navi > ul > li > div ul > li > a {
+	color: #ffffff;
+	display: block;
+	padding: 12px 24px;
+	text-decoration: none;
+}
+.cp_navi > ul  > li > div ul > li:hover > a {
+	background-color: rgba( 255, 255, 255, 0.5);
+}
+
+header li.logo:hover {
+    background-color: white;
+}
+
+header li.search:hover {
+    background-color: white;
+}
+
+/********
+* フッタ *
+ ********/
+
+
 
 /********
 * メイン *
  ********/
 
-.main{
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: pink;
+main{
+    
 }
 
 .main-contents{
-    display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 1fr;
-    align-items: flex-start;
-    margin: 0 auto;
-    max-width: 1200px;
-    height: 100%;
-    background: #fff;
+    
 }
 
 .main-contents-body{
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
+    
 }
-
