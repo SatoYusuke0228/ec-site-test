@@ -60,29 +60,40 @@ a:active {
 
 header {
     margin-top: 0;
-    background-color: black;
+    margin-bottom: 0;
+    background-color: #ffffff;
 }
 
 .cp_navi {
 	background-color: #ffffff;
+	/*
 	border: 1px solid #dedede;
 	border-radius: 4px;
+	*/
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 	color: #888888;
 	display: block;
+	/*
 	margin: 1em 1%;
-	margin-top: 0;
+	*/
+	margin-top: 0.5px;
+	margin-bottom: 0.5px;
+	margin-left: 0.5px;
+	margin-right 0.5px;
 	overflow: hidden;
-	width: 97.5vw;
+	width: 100vw;
+	height: 13.5vh;
 }
 
 .cp_navi ul {
 	margin: 0;
 	padding: 0;
 }
+
 .cp_navi > ul > li {
 	display: inline-block;
 	list-style-type: none;
+	text-align: center;
 	-webkit-transition: all 0.2s;
 	        transition: all 0.2s;
 }
@@ -97,9 +108,11 @@ header {
 }
 
 .cp_navi > ul > li > a > .caret {
+	/*
 	border-top: 4px solid #aaaaaa;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
+	*/
 	content: '';
 	display: inline-block;
 	height: 0;
@@ -145,11 +158,11 @@ header {
 	opacity: 1;
 	visibility: visible;
 }
-.cp_navi > ul > li > div ul > li {
+.cp_navi > ul > li > div > ul > li {
 	display: block;
-	text-align: center;
+	text-align: left;
 }
-.cp_navi > ul > li > div ul > li > a {
+.cp_navi > ul > li > div  > ul > li > a {
 	color: #ffffff;
 	display: block;
 	padding: 12px 24px;
@@ -160,31 +173,59 @@ header {
 }
 
 header li.logo:hover {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 header li.search:hover {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 /********
 * フッタ *
  ********/
 
+footer {
+    background-color: #ffffff;
+}
 
+footer h4{
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
 
 /********
 * メイン *
  ********/
 
-main{
+main {
     
 }
 
-.main-contents{
-    
+.container {
+    margin-right: 0.1em;
+    margin-left: 0.1em;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 86vh;
+}
+.area {
+    scroll-snap-align: start;
+    height: 86vh;
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
 }
 
-.main-contents-body{
-    
+.area:nth-child(even) {
+    background-color: #0db;
 }
+
+.area:nth-child(odd) {
+    background-color: #0bd;
+}
+
+.container::-webkit-scrollbar{
+ display:none;
+}
+
