@@ -9,6 +9,10 @@
  - ～479px：スマートフォン縦
 ===================================*/
 
+/******************
+* ページ全体に適応 *
+ ******************/
+ 
 html {
   font-family: serif;
   overflow: auto;
@@ -26,7 +30,7 @@ body {
 }
 
 #header, #main, #footer {
-    background-color: #ffffff;
+    background-color: #fff;
     margin: 0 auto 0 auto;
     max-width: 960;
     min-width: 1279px;
@@ -66,12 +70,12 @@ header {
     margin-bottom: 0;
 }
 
-/**************
-* メニューバー *
- **************/
+/***********************
+* ヘッダー メニューバー *
+ ***********************/
  
 .cp_navi {
-    background-color: #ffffff;
+    background-color: #fff;
     /*
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -98,16 +102,16 @@ header {
             transition: all 0.2s;
 }
 
-/******************
-* ロゴの位置を調整 *
- ******************/
+/***************************
+* ヘッダー ロゴの位置を調整 *
+ ***************************/
 .logo{
     margin: 0 0 -20px 0;
 }
 
-/**************
-* 検索ボックス *
- **************/
+/***********************
+* ヘッダー 検索ボックス *
+ ***********************/
 .search {
     /*
     width: 16vw;
@@ -164,9 +168,9 @@ header {
     bottom: -9px;
     outline : none;
 }
-/*********************
-* メニューバー リンク *
- *********************/
+/*******************************
+* ヘッダー メニューバー メニュー *
+ *******************************/
 
 .cp_navi > ul > li > a > .caret {
 /*
@@ -235,7 +239,12 @@ header {
     background-color: rgba( 255, 255, 255, 0.5);
 }
 
-header li.logo:hover {
+
+/****************************************************
+* background-colorを適応させたくない箇所を#fffに修正 *
+ ****************************************************/
+ 
+header .logo:hover {
     background-color: #ffffff;
 }
 
@@ -247,10 +256,17 @@ header li.search:hover {
 * フッタ *
  ********/
 
+footer {
+    height: 13.5vh;
+}
+
 footer h4{
-    margin-top: 10px;
-    margin-bottom: 0;
+    position: relative;
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /*********************
@@ -271,8 +287,6 @@ footer h4{
     font-size: 2rem;
     text-align: center;
     vertical-align: center;
-    color: #000000
-   
 }
 
 .area:nth-child {
@@ -291,21 +305,51 @@ footer h4{
     height: 86vh;
 }
 
-.area1 p {
+.area img {
+    height: 100%;
+    z-index: 1;
+}
+
+.area1 h1 {
     position: absolute;
     top: 80%;
     left: 50%;
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     z-index: 2;
+    font-weight: 100;
+    font-size: 10vw;
+    line-height: 10vw;
+    font-variation-settings: 'wght' 100, 'wdth' 85;
 }
 
-.area img {
-    height: 100%;
-    z-index: 1;
+h1 .char {
+    --delay: calc((var(--char-index) + 1) * 400ms);
+    animation: breathe 4000ms infinite both;
+    animation-delay: var(--delay);
+}
+
+h1:hover span {
+    animation-play-state: paused;
+}
+
+@keyframes breathe {
+    0% {
+        font-variation-settings: 'wght' 100, 'wdth' 85;
+        font-size: 7vw;
+    }
+    60% {
+        font-variation-settings: 'wght' 700, 'wdth' 100;
+        font-size: 8.5vw;
+    }
+    
+    100% {
+        font-variation-settings: 'wght' 100, 'wdth' 85;
+        font-size: 7vw;
+    }
 }
 
 /*******************************
