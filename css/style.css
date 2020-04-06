@@ -12,7 +12,8 @@
 /******************
 * ページ全体に適応 *
  ******************/
- 
+
+
 html {
     font-family: serif;
     overflow: auto;
@@ -367,7 +368,7 @@ h1:hover span {
     height: 60vh;
     overflow: hidden;
     position: relative;
-    display:block;
+    display: block;
     margin: 0 auto 0 auto;
 }
 
@@ -511,6 +512,7 @@ ul#thumb li#thumb04 img {-webkit-animation-delay: 15s;}
     padding: 10px;
     margin:.5rem auto;
 }
+
 @media screen and (max-width: 768px) {
 /* スマホサイズでスライダー表示 */
   .slide-wrap {
@@ -525,7 +527,7 @@ ul#thumb li#thumb04 img {-webkit-animation-delay: 15s;}
 /******************
 * 1280px〜：大型PC *
  ******************/
-@media screen and (min-width:1280px) and (max-width: none) {}
+@media screen and (min-width:1280px) {}
 
 
 /*=======================
