@@ -478,6 +478,10 @@ ul#thumb li#thumb02 img {-webkit-animation-delay: 5s;}
 ul#thumb li#thumb03 img {-webkit-animation-delay: 10s;}
 ul#thumb li#thumb04 img {-webkit-animation-delay: 15s;}
 
+
+
+
+
 /****************
 * 商品一覧ページ *
  ****************/
@@ -502,7 +506,8 @@ ul#thumb li#thumb04 img {-webkit-animation-delay: 15s;}
     text-decoration: none;
 }
 .slide-box img {
-    display: block;
+	margin: 0 auto;
+    display: inline;
     height: auto;
     width: 100%;
 }
@@ -522,6 +527,65 @@ ul#thumb li#thumb04 img {-webkit-animation-delay: 15s;}
     flex: 0 0 70%;
     margin: auto 1% auto auto;
   }
+}
+
+
+
+
+
+/****************
+* 商品詳細ページ *
+ ****************/
+
+main > .items-page {
+  height: 86vh;
+}
+
+main > .items-page > .items-info {
+  display: flex;
+  height: 86vh;
+  margin-top: 6vh;
+}
+
+main > .items-page > .items-info > .items-image {
+  width: auto;
+  height: 350px;
+  object-fit: cover;
+  margin: 0 6vw 0 6vw;
+}
+
+main > .items-page > .items-info > .items-detail {
+  color: #000;
+  font-size: 0.8em;
+}
+
+.items-detail table, .items-detail tr, .items-detail th, .items-detail td {
+    border-collapse: collapse;
+    border:1px solid #333;
+}
+
+.items-detail table {
+  text-align: left;
+  max-width: 58vw;
+  margin; 0 auto 0 auto;
+}
+
+.items-detail th {
+  width: 9vw;
+}
+
+.items-detail td {
+  width: 47vw;
+}
+
+.items-comment {
+  height: 52vh;
+  max-height: 52vh;
+}
+
+main > .items-page > .items-info > .items-detail > button {
+  float: right;
+  margin:  15px auto 15px auto;
 }
 
 /******************
